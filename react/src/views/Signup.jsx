@@ -42,7 +42,7 @@ export default function Signup() {
           Signup for free
         </h1>
         {errors &&
-          <div className="alert-box">
+          <div className="alert">
             {Object.keys(errors).map(key => (
               <p key={key}>{errors[key][0]}</p>
             ))}

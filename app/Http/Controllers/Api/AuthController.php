@@ -11,19 +11,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function login(LoginRequest $request)
-    {
-        $credentials = $request->validated();
-        if (!Auth::attempt($credentials)) {
-            return response([
-                'message' => 'Provided email address or password is incorrect'
-            ], 422);
-        }
-        $user = Auth::user();
-        $token = $user->createToken('main')->plainTextToken;
-        return response(compact('user', 'token'));
-    }
-
     public function signup(SignupRequest $request)
     {
         $data = $request->validated();
@@ -37,7 +24,20 @@ class AuthController extends Controller
         return response(compact('user', 'token'));
     }
 
-    public function logout(Requests $request)
+    public function login(LoginRequest $request)
+    {
+        $credentials = $request->validated();
+        if (!Auth::attempt($credentials)) {
+            return response([
+                'message' => 'Provided email address or password is incorrect'
+            ], 422);
+        }
+        $user = Auth::user();
+        $token = $user->createToken('main')->plainTextToken;
+        return response(compact('user', 'token'));
+    }
+
+    public function logout(Request $request)
     {
         $user = $request->user();
         $user->currentAccessToken()->delete();
