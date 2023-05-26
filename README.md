@@ -1,13 +1,13 @@
 # Laravel React
 
-Laravel Application with React.
+Login and CRUD Laravel Application with React. 
 
 ## Installation
 
 1. **Clone the repository:**
 
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:rifkymol/laravel-react.git
    ```
 
 2. **Install dependencies:**
@@ -39,7 +39,7 @@ Laravel Application with React.
 1. **Navigate to the React frontend folder:**
 
    ```bash
-   cd folder-name
+   cd react
    ```
 
    Replace `folder-name` with the name of the folder where your React frontend is located.
@@ -68,4 +68,4 @@ If you encounter any issues during the setup or running of the project, please c
 
 ---
 
-Congratulations! You have successfully set up the project and can now start working on it. Enjoy coding!
+Congratulations! You have successfully set up the Laravel-react project and can now start working on it. Enjoy coding!
